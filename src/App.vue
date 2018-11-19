@@ -12,7 +12,7 @@
 import { mapState } from 'vuex'
 
 import myHeader from '@/components/Header.vue'
-import myLoader from '@/components/Loader.vue'
+import myLoader from '@/components/MyLoader.vue'
 import firebase from 'firebase'
 
 export default  {

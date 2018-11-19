@@ -27,7 +27,6 @@ export default {
     bottom: 0;
     margin: auto;
 }
-
 #preloader {
     display: none;
     position: fixed;
