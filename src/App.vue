@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <myLoader></myLoader>
     <myHeader v-if="currentUser"></myHeader>
     <div id="scrolling-div" class="content-page">
       <router-view :prenom="userProfile.prenom" :panier="userPanier"></router-view>
@@ -11,12 +12,14 @@
 import { mapState } from 'vuex'
 
 import myHeader from './components/Header.vue'
+import myLoader from './components/Loader.vue'
 import firebase from 'firebase'
 
 export default  {
   name: 'App',
   components: {
-    myHeader
+    myHeader,
+    myLoader
   },
   computed: {
       ...mapState(['currentUser', 'userProfile', 'userPanier'])
@@ -54,7 +57,7 @@ div.class-content:nth-child(){
 div.content-page {
   height: 100%;
   overflow: hidden;
-  display: content;
+  width: 100%;
 }
 
 section.content-section {
@@ -92,6 +95,7 @@ section.content-section {
     #panier {
       height: calc(100vh - 90px);
       overflow: auto;
+      width: 100%
     }
 
     .item-shoes {

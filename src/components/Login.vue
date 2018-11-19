@@ -25,12 +25,14 @@ export default {
     },
     methods: {
         signIn: function(){
+
             fb.auth.signInWithEmailAndPassword(this.email, this.password).then(creadential => {
                 this.$store.commit('setCurrentUser', creadential.user)
                 // Récupération des données sur cloud firestore
                 this.$store.dispatch('fetchUserProfile')
                 this.$store.dispatch('fetchUserPanier')
                 this.$router.replace('/home')
+
             }).catch(err => {
                 console.log(err)
             })

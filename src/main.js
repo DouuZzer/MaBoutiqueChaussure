@@ -35,6 +35,8 @@ Vue.config.productionTip = false
 let app
 fb.auth.onAuthStateChanged(user => {
   // pas de credential
+  setTimeout(function(){document.getElementById('preloader').style.display = 'block'},0)
+   setTimeout(function(){document.getElementById('preloader').style.display = 'none'},2500)
   if (user) {
     console.log("Un utilisateur est connecté.")// User is signed in.
     store.commit('setCurrentUser', user)

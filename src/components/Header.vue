@@ -34,6 +34,7 @@ export default {
     methods: {
         scrollToSection: function(el) {
             if(window.location.pathname != '/home'){
+                console.log('Je suis pas dans home')
                 this.$router.replace('home')
 
                 if(window.location.pathname === '/home'){
@@ -45,7 +46,9 @@ export default {
                     },300);
                 }
             }else{
-                console.log(document.getElementById(el).offsetTop)
+                console.log(window.location.pathname + ' Je suis dans home')
+                console.log(document.getElementById(el))
+                
                 document.getElementById('scrolling-div').scrollTo({
                     top: document.getElementById(el).offsetTop - 90,
                     behavior: 'smooth'
@@ -109,6 +112,7 @@ div.header-desk > h1 {
     padding: 0px;
     margin: 0;
     float: right;
+    line-height: 1.5em;
 }
 
 .menu > li {
@@ -119,6 +123,7 @@ div.header-desk > h1 {
     margin: 5px;
     font-family: "Marker Felt", fantasy;
     font-size: 1.5em;
+    color: white;
     
 }
 

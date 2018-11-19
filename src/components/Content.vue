@@ -85,6 +85,7 @@ export default {
                 img: itemPanier.img,
                 prix: itemPanier.prix
             }).then( ref => {
+                alert( itemPanier.marque + " - " + itemPanier.modele + " a été ajouté au panier.");
                 console.log('Ajout réussi en base de donnée')
                 this.$store.dispatch('fetchUserPanier')
             }).catch( err => {

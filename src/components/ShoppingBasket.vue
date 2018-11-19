@@ -99,6 +99,9 @@ color: #2bc43d;
     margin: 50px auto;
 }
 
+th {
+    text-align: left;
+}
 td {
     text-align: left;
 }

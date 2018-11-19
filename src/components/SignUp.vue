@@ -50,7 +50,9 @@ export default {
                 }).then(() => {
                     this.$store.dispatch('fetchUserProfile')
                     this.$store.dispatch('fetchUserPanier')
+                    
                     this.$router.replace('/home')
+                    
                 }).catch(err => {
                     console.log(err)
                 })
